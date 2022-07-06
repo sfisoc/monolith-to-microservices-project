@@ -3,7 +3,7 @@ services:
   - docker
 
 env:
-  COMPOSE_VERSION: 1.4.1
+  COMPOSE_VERSION: 2.6.1
 
 before_install:
  - curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -11,6 +11,7 @@ before_install:
  - sudo mv docker-compose /usr/local/bin
 
 script:
+  - docker-compose version
   - docker-compose -f docker-compose-build.yaml build --parallel
   - docker tag udagram-reverseproxy gammer4live/udagram-reverseproxy:v1
   - docker tag udagram-api-user gammer4live/udagram-api-user:v1
