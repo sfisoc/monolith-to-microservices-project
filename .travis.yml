@@ -10,7 +10,7 @@ before_install:
  - chmod +x docker-compose
  - sudo mv docker-compose /usr/local/bin
 
- script:
+script:
   - docker-compose -f docker-compose-build.yaml build --parallel
   - docker tag udagram-reverseproxy gammer4live/udagram-reverseproxy:v1
   - docker tag udagram-api-user gammer4live/udagram-api-user:v1
