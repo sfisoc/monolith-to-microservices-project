@@ -4,5 +4,6 @@ kind: ClusterConfig
 metadata:
   name: udagrameks
   region: us-west-2
-  nodes-min: 2 
-  nodes-max: 3
+
+
+  eksctl create cluster --name udagrameks --region=us-west-2 --nodes-min=2 --nodes-max=3
