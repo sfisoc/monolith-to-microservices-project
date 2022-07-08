@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
-***REMOVED***
+metadata:
   name: reverseproxy
   labels:
     app: reverseproxy
@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app: reverseproxy
   template:
-    ***REMOVED***
+    metadata:
       labels:
         app: reverseproxy
     spec:

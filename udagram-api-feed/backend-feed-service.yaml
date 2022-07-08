@@ -1,6 +1,6 @@
-***REMOVED***
+apiVersion: v1
 kind: Service
-***REMOVED***
+metadata:
   name: backend-feed
   labels:
     app: backend-feed

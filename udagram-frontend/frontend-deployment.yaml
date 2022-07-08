@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
-***REMOVED***
+metadata:
   name: frontend
   labels:
     app: frontend
@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app: frontend
   template:
-    ***REMOVED***
+    metadata:
       labels:
         app: frontend
     spec:

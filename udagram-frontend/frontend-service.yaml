@@ -1,6 +1,6 @@
-***REMOVED***
+apiVersion: v1
 kind: Service
-***REMOVED***
+metadata:
   name: frontend
   labels:
     run: frontend
