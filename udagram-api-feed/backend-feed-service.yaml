@@ -1,0 +1,13 @@
+***REMOVED***
+kind: Service
+***REMOVED***
+  name: backend-feed
+  labels:
+    app: backend-feed
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: backend-feed

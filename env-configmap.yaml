@@ -1,0 +1,9 @@
+***REMOVED*** 
+kind: ConfigMap 
+***REMOVED***
+  name: my-configmap 
+***REMOVED***
+  # Configuration values can be set as key-value properties
+  AWS_PROFILE: default
+  AWS_REGION: us-west-2
+  URL: http://localhost:8100

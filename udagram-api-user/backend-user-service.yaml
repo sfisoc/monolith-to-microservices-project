@@ -1,0 +1,13 @@
+***REMOVED***
+kind: Service
+***REMOVED***
+  name: backend-user
+  labels:
+    app: backend-user
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: backend-user

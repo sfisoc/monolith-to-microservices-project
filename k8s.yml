@@ -1,0 +1,8 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+***REMOVED***
+  name: udagrameks
+  region: us-west-2
+  nodes-min: 2 
+  nodes-max: 3

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+***REMOVED***
+  name: reverseproxy
+  labels:
+    app: reverseproxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reverseproxy
+  template:
+    ***REMOVED***
+      labels:
+        app: reverseproxy
+    spec:
+      containers:
+      - name: udagram-reverseproxy
+        image: gammer4live/udagram-reverseproxy:v1
+        ports:
+          - containerPort: 8080
+      restartPolicy: Always

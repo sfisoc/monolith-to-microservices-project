@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+***REMOVED***
+  name: backend-feed
+  labels:
+    app: backend-feed
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-feed
+  template:
+    ***REMOVED***
+      labels:
+        app: backend-feed
+    spec:
+      containers:
+      - name: udagram-api-feed
+        image: gammer4live/udagram-api-feed:v1     
+        ports:
+        - containerPort: 8080
+        # livenessProbe:
+        #   httpGet:
+        #     path: /
+        #     port: 8080
+        #   initialDelaySeconds: 10
+        #   periodSeconds: 3
+        env:
+        - name: URL
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap 
+              key: URL
+        - name: AWS_REGION
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap
+              key: AWS_REGION
+        - name: AWS_PROFILE
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap
+              key: AWS_PROFILE
+        - name: AWS_BUCKET
+          valueFrom:
+            secretKeyRef:
+            ***REMOVED***
+              key: AWS_BUCKET
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+            ***REMOVED***
+              key: JWT_SECRET
+        - name: POSTGRES_DB
+          valueFrom:
+            secretKeyRef:
+            ***REMOVED***
+              key: POSTGRES_DB
+        - name: POSTGRES_HOST
+          valueFrom:
+            secretKeyRef:
+            ***REMOVED***
+              key: POSTGRES_HOST
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+            ***REMOVED***
+              key: POSTGRES_PASSWORD
+        - name: POSTGRES_USERNAME
+          valueFrom:
+            secretKeyRef:
+            ***REMOVED***
+              key: POSTGRES_USERNAME
+        volumeMounts:
+        - name: aws-secret
+          mountPath: "/root/.aws/"
+          readOnly: true        
+      restartPolicy: Always
+      volumes:
+      - name: aws-secret
+        secret:
+          secretName: aws-secret
