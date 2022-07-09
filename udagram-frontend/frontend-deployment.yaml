@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: udagram-frontend
-        image: gammer4live/udagram-frontend:v8
+        image: gammer4live/udagram-frontend:v9

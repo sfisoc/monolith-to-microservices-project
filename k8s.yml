@@ -7,3 +7,7 @@ metadata:
 
 
   eksctl create cluster --name udagrameks --region=us-west-2 --nodes-min=2 --nodes-max=3
+
+
+docker build . -t gammer4live/udagram-reverseproxy:v7
+docker push [Dockerhub-username]/udagram-reverseproxy:v7

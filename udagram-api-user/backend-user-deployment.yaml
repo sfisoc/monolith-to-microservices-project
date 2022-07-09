@@ -19,6 +19,11 @@ spec:
         image: gammer4live/udagram-api-user:v1     
         ports:
         - containerPort: 8080
+        resources:
+          limits:
+            cpu: "500m"
+          requests:
+            cpu: "250m"
         # livenessProbe:
         #   httpGet:
         #     path: /
